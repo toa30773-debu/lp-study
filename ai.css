@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+/* 共通 */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* ファーストビュー */
+.hero {
+  background: #4facfe;
+  color: white;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 28px;
+}
+
+/* セクション色分け */
+.problem { background: #f5f5f5; }
+.danger { background: #ffe5e5; }
+.solution { background: #e5f0ff; }
+.benefit { background: #f0ffe5; }
+.trust { background: #fffbe5; }
+.offer { background: #ffe5f7; }
+
+/* ボタン */
+button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #ff6600;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* ホバー */
+button:hover {
+  background: #e05500;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 22px;
+  }
+}
