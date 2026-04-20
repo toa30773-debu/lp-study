@@ -1,33 +1,160 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>LP練習</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBAN GYM | Urban Premium Fitness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Noto+Sans+JP:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>プログラミングで人生変える</h1>
-</header>
+    <header id="header">
+        <div class="container header-inner">
+            <div class="logo">URBAN<span>GYM</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#program">PROGRAM</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact" class="btn btn-primary" style="padding: 10px 25px;">BOOK NOW</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<section class="hero">
-  <h2>未経験から月5万円へ</h2>
-  <button>無料で始める</button>
-</section>
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-image-area">
+            <img src="img/jim.jpg" alt="URBAN GYM メインビジュアル" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="reveal active">BEYOND<br>YOUR<br><span style="color: var(--accent);">LIMITS.</span></h1>
+                <p class="reveal active" style="transition-delay: 0.2s;">
+                    最高峰のトレーニング環境と、最新のテクノロジーが融合。あなたの理想を、最短距離で現実に。
+                </p>
+                <div class="reveal active" style="transition-delay: 0.4s;">
+                    <a href="#contact" class="btn btn-primary">START FREE TRIAL</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="problem">
-  <h2>こんな悩みありませんか？</h2>
-  <p>お金がない / スキルがない</p>
-</section>
+    <section id="about" class="container">
+        <div class="section-header reveal">
+            <span class="en">PROBLEMS</span>
+            <h2>現状を打破する</h2>
+        </div>
+        <div class="problems-grid">
+            <div class="problem-card reveal">
+                <h3 style="color: var(--accent); margin-bottom: 15px;">01</h3>
+                <p>今のジムで満足できていない、結果が出ないという悩み。</p>
+            </div>
+            <div class="problem-card reveal" style="transition-delay: 0.1s;">
+                <h3 style="color: var(--accent); margin-bottom: 15px;">02</h3>
+                <p>一人でのトレーニングに限界を感じている。</p>
+            </div>
+            <div class="problem-card reveal" style="transition-delay: 0.2s;">
+                <h3 style="color: var(--accent); margin-bottom: 15px;">03</h3>
+                <p>洗練された空間で、モチベーションを高く保ちたい。</p>
+            </div>
+        </div>
+    </section>
 
-<section class="solution">
-  <h2>その悩み、解決できます</h2>
-</section>
+    <section class="container">
+        <div class="features-row">
+            <div class="feature-text reveal">
+                <span class="en" style="color: var(--accent);">POINT 01</span>
+                <h2 style="font-size: 2rem; margin: 15px 0;">圧倒的な設備クオリティ</h2>
+                <p style="color: var(--text-sub);">世界トップクラスのマシンラインナップ。24時間、最高の状態でトレーニングが可能です。</p>
+            </div>
+            <div class="feature-img image-box reveal">
+              <img src="img\photo-1571902943202-507ec2618e8f.png" alt="トレーニングマシンの様子" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+        <div class="features-row">
+            <div class="feature-text reveal">
+                <span class="en" style="color: var(--accent);">POINT 02</span>
+                <h2 style="font-size: 2rem; margin: 15px 0;">AIによるデータ分析</h2>
+                <p style="color: var(--text-sub);">独自のAIアプリがあなたの成長を可視化。常に最適なメニューを提案します。</p>
+            </div>
+            <div class="feature-img image-box reveal">
+              <img src="img\photo-1723505614212-1bf22dbf6080.png" alt="AIによるデータ分析" style="width: 100%; height: 100%; object-fit: cover;">
 
-<section class="cta">
-  <button>今すぐ登録</button>
-</section>
+              </div>
+        </div>
+    </section>
 
+    <section id="program" class="container">
+        <div class="section-header reveal">
+            <span class="en">PROGRAMS</span>
+            <h2>多彩なメソッド</h2>
+        </div>
+        
+        <div class="tab-wrapper reveal">
+            <div class="tab-nav">
+                <button class="tab-trigger active" data-tab="tab-a">STRENGTH</button>
+                <button class="tab-trigger" data-tab="tab-b">CARDIO</button>
+                <button class="tab-trigger" data-tab="tab-c">YOGA</button>
+            </div>
+
+            <div id="tab-a" class="tab-pane active">
+                <div class="image-box" style="height: 350px;"></div>
+                <div>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 20px;">筋力トレーニング</h3>
+                    <p style="color: var(--text-sub); margin-bottom: 30px;">科学的根拠に基づいたアプローチで、最短で理想の体型へ導きます。専任のコーチがサポート。</p>
+                    <ul style="list-style: none; color: var(--accent);">
+                        <li>✓ パーソナル指導</li>
+                        <li>✓ 栄養管理アドバイス</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="container" style="max-width: 900px;">
+        <div class="section-header reveal">
+            <span class="en">FAQ</span>
+            <h2>よくある質問</h2>
+        </div>
+        <div class="accordion">
+            <div class="faq-item reveal">
+                <div class="faq-q"><span>Q. 未経験でも大丈夫ですか？</span><span>+</span></div>
+                <div class="faq-a">もちろん可能です。9割の方が未経験からスタートし、結果を出されています。</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q"><span>Q. 入会金はいくらですか？</span><span>+</span></div>
+                <div class="faq-a">現在キャンペーン期間につき、入会金無料となっております。</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <div class="cta-box reveal">
+            <h2 style="font-size: 3rem; margin-bottom: 20px;">READY TO<br><span style="color: var(--accent);">EVOLVE?</span></h2>
+            <p style="margin-bottom: 40px; color: var(--text-sub);">今なら限定10名様まで、無料パーソナルトレーニング体験実施中。</p>
+            <a href="#" class="btn btn-primary">今すぐ無料で予約する</a>
+        </div>
+    </section>
+
+    <footer style="padding: 100px 0 50px;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 30px;">
+                <div>
+                    <div class="logo" style="margin-bottom: 20px;">URBAN<span>GYM</span></div>
+                    <p style="color: var(--text-sub);">東京都渋谷区XX-XX-XX アーバンビル3F</p>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#" style="color: #fff; text-decoration: none;">INSTAGRAM</a>
+                    <a href="#" style="color: #fff; text-decoration: none;">TWITTER</a>
+                </div>
+            </div>
+            <p style="margin-top: 50px; text-align: center; color: #444; font-size: 0.8rem;">&copy; 2026 URBAN GYM. DESIGNED FOR PERFORMANCE.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
