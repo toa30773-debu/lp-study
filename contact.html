@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | FITNESS GYM</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="ai-style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Noto+Sans+JP:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- お問い合わせページ -->
+  <main id="view-contact" style="padding-top: 150px;">
+    <div class="container">
+
+      <div class="section-title">
+        <h2 class="en">CONTACT</h2>
+        <p>無料体験・お問い合わせ</p>
+      </div>
+
+      <form
+        id="contact-form"
+        action="thanks.html"
+        class="reveal active"
+        style="max-width: 600px; margin: 0 auto;"
+      >
+
+        <div class="form-group">
+          <label>お名前</label>
+          <input
+            type="text"
+            required
+            placeholder="田中 太郎"
+          >
+        </div>
+
+        <div class="form-group">
+          <label>メールアドレス</label>
+          <input
+            type="email"
+            required
+            placeholder="example@mail.com"
+          >
+        </div>
+
+        <div class="form-group">
+          <label>お問い合わせ内容</label>
+          <textarea
+            rows="5"
+            placeholder="無料体験を希望します。"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          style="width: 100%; border: none; cursor: pointer;"
+        >
+          メッセージを送信する
+        </button>
+
+        <p style="text-align: center; margin-top: 20px;">
+          <a
+            href="ai-index.html"
+            class="btn-back-home"
+            style="color: var(--text-sub); text-decoration: none;"
+          >
+            ← トップページに戻る
+          </a>
+        </p>
+
+      </form>
+    </div>
+  </main>
+
+</body>
+</html>

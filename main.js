@@ -1,4 +1,70 @@
-// スクロール時のヘッダーアニメーション
+// 画面切り替え制御
+const viewHome = document.getElementById('view-home');
+const viewContact = document.getElementById('view-contact');
+const viewThanks = document.getElementById('view-thanks');
+const mainNav = document.getElementById('main-nav');
+const menuToggle = document.getElementById('menu-toggle');
+
+// 画面を切り替える関数
+function showView(viewName) {
+    // モバイルメニューが開いていれば閉じる
+    mainNav.classList.remove('active');
+    menuToggle.classList.remove('active');
+
+    // 全てのビューを隠す
+    viewHome.style.display = 'none';
+    viewContact.style.display = 'none';
+    viewThanks.style.display = 'none';
+
+    // 指定したビューを表示
+    if (viewName === 'home') {
+        viewHome.style.display = 'block';
+        // ナビゲーションを表示（スマホの場合はハンバーガーボタンで制御されるが、
+        // visibility等ではなくdisplayで管理している場合はここでも考慮）
+    } else if (viewName === 'contact') {
+        viewContact.style.display = 'block';
+        window.scrollTo(0, 0);
+    } else if (viewName === 'thanks') {
+        viewThanks.style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+}
+
+// ハンバーガーメニューの開閉
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        mainNav.classList.toggle('active');
+    });
+}
+
+// ナビゲーションリンクをクリックした時にメニューを閉じる（ページ内リンク用）
+document.querySelectorAll('#main-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        menuToggle.classList.remove('active');
+    });
+});
+
+// イベントリスナーのセットアップ
+document.querySelectorAll('.btn-to-contact').forEach(btn => {
+    btn.addEventListener('click', () => showView('contact'));
+});
+
+document.querySelectorAll('.btn-back-home').forEach(btn => {
+    btn.addEventListener('click', () => showView('home'));
+});
+
+// フォーム送信のシミュレーション
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // 実際の送信を止める
+        showView('thanks'); // 完了画面へ
+    });
+}
+
+// スクロール時の制御
 window.addEventListener('scroll', () => {
     const header = document.getElementById('header');
     if (window.scrollY > 50) {
@@ -18,31 +84,5 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// タブ切り替え
-const triggers = document.querySelectorAll('.tab-trigger');
-const panes = document.querySelectorAll('.tab-pane');
-
-triggers.forEach(t => {
-    t.addEventListener('click', () => {
-        triggers.forEach(btn => btn.classList.remove('active'));
-        panes.forEach(p => p.classList.remove('active'));
-        t.classList.add('active');
-        document.getElementById(t.dataset.tab).classList.add('active');
-    });
-});
-
-// アコーディオン
-const faqItems = document.querySelectorAll('.faq-q');
-faqItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const answer = item.nextElementSibling;
-        const icon = item.querySelectorAll('span')[1];
-        if (answer.style.display === "block") {
-            answer.style.display = "none";
-            icon.textContent = "+";
-        } else {
-            answer.style.display = "block";
-            icon.textContent = "-";
-        }
-    });
-});
+// 初回読み込み時にスクロールアニメーションを発火させる
+window.dispatchEvent(new Event('scroll'));
